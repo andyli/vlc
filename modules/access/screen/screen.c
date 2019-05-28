@@ -100,28 +100,38 @@ vlc_module_begin ()
     set_subcategory( SUBCAT_INPUT_ACCESS )
 
     add_float( "screen-fps", SCREEN_FPS, FPS_TEXT, FPS_LONGTEXT, false )
+        change_safe()
 
 #ifdef SCREEN_SUBSCREEN
     add_integer( "screen-top", 0, TOP_TEXT, TOP_LONGTEXT, true )
+        change_safe()
     add_integer( "screen-left", 0, LEFT_TEXT, LEFT_LONGTEXT, true )
+        change_safe()
     add_integer( "screen-width", 0, WIDTH_TEXT, WIDTH_TEXT, true )
+        change_safe()
     add_integer( "screen-height", 0, HEIGHT_TEXT, HEIGHT_TEXT, true )
+        change_safe()
 
     add_bool( "screen-follow-mouse", false, FOLLOW_MOUSE_TEXT,
               FOLLOW_MOUSE_LONGTEXT, false )
+        change_safe()
 #endif
 
 #ifdef SCREEN_MOUSE
     add_loadfile("screen-mouse-image", "", MOUSE_TEXT, MOUSE_LONGTEXT)
+        change_safe()
 #endif
 
 #ifdef _WIN32
     add_integer( "screen-fragment-size", 0, FRAGS_TEXT, FRAGS_LONGTEXT, true )
+        change_safe()
 #endif
 
 #ifdef SCREEN_DISPLAY_ID
     add_integer( "screen-display-id", 0, DISPLAY_ID_TEXT, DISPLAY_ID_LONGTEXT, true )
+        change_safe()
     add_integer( "screen-index", 0, INDEX_TEXT, INDEX_LONGTEXT, true )
+        change_safe()
 #endif
 
     set_capability( "access", 0 )
